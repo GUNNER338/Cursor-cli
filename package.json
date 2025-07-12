@@ -1,0 +1,25 @@
+{
+  "name": "cursor-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GUNNER338/Cursor-cli.git"
+  },
+  "author": "Gurpartap",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GUNNER338/Cursor-cli/issues"
+  },
+  "homepage": "https://github.com/GUNNER338/Cursor-cli#readme",
+  "keywords": [],
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "openai": "^5.9.0"
+  }
+}
