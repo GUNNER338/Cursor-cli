@@ -58,17 +58,20 @@ function getWeatherInfo(cityName) {
   return `${cityName} has 43 Degree C`;
 }
 
-function executeCommand(command){
-  return new Promise((resolve, reject)=> {
-    exec(command, function(err, stdout, stderr){
-      if(err){
+function executeCommand(command) {
+  return new Promise((resolve, reject) => {
+    console.log(`📥 Executing: ${command}`);
+    exec(command, (err, stdout, stderr) => {
+      if (err) {
+        console.error("❌ Error:", err.message);
+        console.error("📤 stderr:", stderr);
         return reject(err);
       }
-      resolve(`stdout: ${stdout}\nstderr: ${stderr}`)
-    })
-  })
+      console.log("✅ stdout:", stdout);
+      resolve(`stdout: ${stdout}\nstderr: ${stderr}`);
+    });
+  });
 }
-
 
 
 const TOOLS_MAP = {
@@ -85,7 +88,7 @@ const messages = [
   },
 ];
 
-const userQuery = "can you create a todoApp folder and create a todo app project with html, css and js";
+const userQuery = "Can you create a todoApp folder in which you have to create todo app with html ,css and js.Try to create all CRUD operations. Make sure code should be readable and with proper comments";
 
 messages.push({ role: "user", content: userQuery });
 
